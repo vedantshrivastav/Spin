@@ -15,7 +15,8 @@ import {
   fontWeight,
   spacing,
   radius,
-} from "../../../constants/theme";
+} from "../../constants/theme";
+import { useNavigation } from "@react-navigation/native";
 
 // ── Types ─────────────────────────────────────────────────
 
@@ -202,13 +203,16 @@ function BillCard({ bill, onPress }: { bill: Bill; onPress: () => void }) {
 // ── Home Screen ───────────────────────────────────────────
 
 export default function HomeScreen() {
-  const router = useRouter();
+  // const router = useRouter();
+  const navigation = useNavigation();
 
   // TODO: replace DUMMY_BILLS with useBillStore() once store is set up
   const bills = DUMMY_BILLS;
 
   const handleScan = () => {
-    router.push("/groupSetup");
+    console.log("Scan button pressed");
+    navigation.navigate('groupSetup');
+    console.log("Navigate to bill scanning flow");
   };
   const handleBillPress = (billId: string) =>
     router.push(`/split-summary/${billId}`);

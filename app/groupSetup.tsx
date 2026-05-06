@@ -16,7 +16,7 @@ import {
   fontWeight,
   spacing,
   radius,
-} from "../../constants/theme";
+} from "../constants/theme";
 
 // ── Types ─────────────────────────────────────────────────
 
